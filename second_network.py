@@ -14,7 +14,7 @@
 #     name: python3
 # ---
 
-# # Création d'un Second réseau sur Ipycytoscape
+# # Création d'un réseau sur Ipycytoscape
 
 # # I- Initialisation
 
