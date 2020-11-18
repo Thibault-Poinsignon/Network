@@ -34,7 +34,6 @@ from fonctions import *
 edges = pd.read_csv('mini_multi_omi.csv')
 
 #print(edges)
-# -
 
 # ## 3) Création du réseau
 
