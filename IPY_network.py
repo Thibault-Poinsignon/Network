@@ -25,6 +25,9 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from ipycytoscape import *
 from fonctions import *
+from ipywidgets import Output
+from IPython.display import display
+from pprint import pformat
 
 # ## 2) Importation des données
 
@@ -92,10 +95,28 @@ g.set_style([
                             }
                         }])
 
+
+out = Output()
+
+def log_clicks(node):
+    with out:
+        print(node['data']['id'])
+        out.clear_output(wait = True)
+
+def log_mouseovers(node):
+    with out:
+        print(f'mouseover: {pformat(node)}')
+        out.clear_output(wait = True)
+
+g.on('node', 'click', log_clicks)
+g.on('node', 'mouseover', log_mouseovers)
+
 display(g)
+display(out)
 
 
 # -
+
 
 # # III- Exploration
 
